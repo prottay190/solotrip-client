@@ -1,5 +1,4 @@
 import React from "react";
-// import { FaTwitter } from "react-icons/fa";
 import device from "../../../images/device-1.png";
 
 const HomeConfused = () => {
@@ -26,11 +25,11 @@ const HomeConfused = () => {
                         <i className="fab fa-twitter"></i>
                       </div>
                       <div className="icon-text">
-                        <h3 className="heading h4">searching for </h3>
+                        <h3 className="heading h4">Resturant</h3>
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna.
+                          We welcome you to taste Holland! Enjoy a new authentic
+                          Hollands Trattoria menu, created by our Partner Chef
+                          Oliver Glowig from Rome and our culinary team.
                         </p>
                       </div>
                     </div>
@@ -43,11 +42,11 @@ const HomeConfused = () => {
                         <i></i>
                       </div>
                       <div className="icon-text">
-                        <h3 className="heading h4">facilities</h3>
+                        <h3 className="heading h4">Spa - beauty & Health</h3>
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna.
+                          Cheers to your new spa! Whether you want more
+                          relaxation, less stress, or a place to entertain,
+                          we’re sure you’re going to love it.
                         </p>
                       </div>
                     </div>
@@ -60,11 +59,29 @@ const HomeConfused = () => {
                         <i></i>
                       </div>
                       <div className="icon-text">
-                        <h3 className="heading h4">changing stuff later</h3>
+                        <h3 className="heading h4">Conference Room</h3>
                         <p>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna.
+                          Like a boardroom, most conferencing spaces are
+                          designed with a long table and plenty of chairs.
+                          Usually, a conference room will also have a projector
+                          or large TV on one side, with the chairs arranged so
+                          that no one has their back to the screen.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col">
+                    <div className="d-flex align-items-start">
+                      <div className="icon icon-lg">
+                        <i></i>
+                      </div>
+                      <div className="icon-text">
+                        <h3 className="heading h4">Swiming Pool</h3>
+                        <p>
+                          Explore our marvelous swiming pool where you can swim
+                          & feel your desire
                         </p>
                       </div>
                     </div>
