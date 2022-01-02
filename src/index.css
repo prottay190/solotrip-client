@@ -1,4 +1,7 @@
+/* poppins and montserrat font from google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,600;1,700&family=Poppins:wght@400;600;700&display=swap');
+/* nunito font from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&family=Poppins&display=swap');
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,6 +13,7 @@ body {
 :root{
   --poppins-font:'Poppins', sans-serif;
   --montserrat-font:'Montserrat', sans-serif;
+  --nunito-font:'Nunito', sans-serif;
   }
 
 code {
