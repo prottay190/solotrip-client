@@ -71,22 +71,6 @@ const HomeConfused = () => {
                     </div>
                   </div>
                 </div>
-                <div className="row">
-                  <div className="col">
-                    <div className="d-flex align-items-start">
-                      <div className="icon icon-lg">
-                        <i></i>
-                      </div>
-                      <div className="icon-text">
-                        <h3 className="heading h4">Swiming Pool</h3>
-                        <p>
-                          Explore our marvelous swiming pool where you can swim
-                          & feel your desire
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
