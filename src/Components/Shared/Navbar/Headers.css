@@ -1,17 +1,21 @@
-.headers-text{
-    font-size: 30px !important;
-    font-weight: 400;
-    margin-top: -8px;
+.navbar-link-custom {
+ text-decoration: none;
+ margin: 0em 1.5em;
+ color: #606060;
+ font-weight: bold;
+ transition: all 200ms;
 }
-.simple-text{
-    color: #52BE80;
+.navbar-link-custom:hover {
+ color: #deb666;
 }
-.menu-text{
-    font-size: 25px;
-    text-decoration: none;
-    color: #606060;
-    margin-right: 15px;
+.btn-regular {
+ background-color: #deb666;
+ border: none;
+ color: #fff;
+ padding: 0.3em 1em;
 }
-.menu-text:hover{
-    color: #D4AC0D !important;
+.navbar-book-btn {
+ font-weight: 700;
+ letter-spacing: 0.1em;
+ margin-left: 1em;
 }
