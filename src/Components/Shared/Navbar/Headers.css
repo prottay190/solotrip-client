@@ -1,0 +1,12 @@
+.headers-text{
+    font-size: 30px !important;
+    font-weight: 400;
+    margin-top: -8px;
+}
+.simple-text{
+    color: green;
+}
+.menu-text{
+    font-size: 25px;
+    color: grey;
+}
