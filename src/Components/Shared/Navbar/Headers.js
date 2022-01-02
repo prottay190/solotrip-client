@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import "./Headers.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../../../images/logo-main.png";
 
 const Headers = () => {
@@ -10,7 +10,12 @@ const Headers = () => {
    <Navbar bg="light" expand="lg">
     <Container>
      <Navbar.Brand href="#home">
-      <img src={logo} alt="" height="60px" />
+      <div className="d-flex align-items-center">
+       <img src={logo} alt="" height="60px" />
+       <p className="nav-logo-text my-0">
+        Solo<span className="nav-logo-text-span">Trip</span>
+       </p>
+      </div>
      </Navbar.Brand>
      <Navbar.Toggle aria-controls="basic-navbar-nav" />
      <Navbar.Collapse id="basic-navbar-nav">
@@ -28,8 +33,11 @@ const Headers = () => {
         CONTACT US
        </Link>
       </Nav>
+      <Link className="d-lg-none" to="/home">
+       <button className="btn-regular navbar-book-btn">Book Now</button>
+      </Link>
      </Navbar.Collapse>
-     <Link to="/home">
+     <Link className="d-none d-lg-block" to="/home">
       <button className="btn-regular navbar-book-btn">Book Now</button>
      </Link>
     </Container>
