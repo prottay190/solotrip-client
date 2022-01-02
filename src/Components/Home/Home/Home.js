@@ -1,9 +1,10 @@
 import React from "react";
+import Headers from "../../Shared/Navbar/Headers";
 
 const Home = () => {
   return (
     <div>
-      <h1>this is demo</h1>
+      <Headers />
     </div>
   );
 };

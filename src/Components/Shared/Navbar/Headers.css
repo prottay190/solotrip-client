@@ -4,9 +4,14 @@
     margin-top: -8px;
 }
 .simple-text{
-    color: green;
+    color: #52BE80;
 }
 .menu-text{
     font-size: 25px;
-    color: grey;
+    text-decoration: none;
+    color: #606060;
+    margin-right: 15px;
+}
+.menu-text:hover{
+    color: #D4AC0D !important;
 }

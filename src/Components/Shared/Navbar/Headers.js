@@ -4,7 +4,7 @@ import './Headers.css';
 import { NavLink } from 'react-router-dom';
 import logo from '../../../images/solotrip with white text.png';
 
-const Heades = () => {
+const Headers = () => {
     return (
         <>
             <Navbar style={{fontFamily: 'var(--poppins-font)'}} bg="light" expand="lg">
@@ -31,4 +31,4 @@ const Heades = () => {
     );
 };
 
-export default Heades;
+export default Headers;
