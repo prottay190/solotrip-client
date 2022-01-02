@@ -1,0 +1,60 @@
+.dual-tone {
+  background: linear-gradient(
+    45deg,
+    #845ec2,
+    #d65db2d2,
+    #ff6f91,
+    #ff9771,
+    #ffc75fbf,
+    #f9f971ea
+  );
+  background-size: 600% 600%;
+  -webkit-animation: AnimationName 8s ease infinite;
+  -moz-animation: AnimationName 7s ease infinite;
+  -o-animation: AnimationName 2s ease infinite;
+  animation: AnimationName 8s ease infinite;
+}
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 19%;
+  }
+  46% {
+    background-position: 100% 82%;
+  }
+  100% {
+    background-position: 0% 19%;
+  }
+}
+@-moz-keyframes AnimationName {
+  0% {
+    background-position: 0% 19%;
+  }
+  50% {
+    background-position: 100% 82%;
+  }
+  100% {
+    background-position: 0% 19%;
+  }
+}
+@-o-keyframes AnimationName {
+  0% {
+    background-position: 0% 19%;
+  }
+  50% {
+    background-position: 100% 82%;
+  }
+  100% {
+    background-position: 0% 19%;
+  }
+}
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 19%;
+  }
+  50% {
+    background-position: 100% 82%;
+  }
+  100% {
+    background-position: 0% 19%;
+  }
+}
