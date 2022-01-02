@@ -4,17 +4,15 @@ import Home from "./Components/Home/Home/Home";
 import NotFound from "./Components/NotFound/NotFound";
 
 function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path='*' element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
+ return (
+  <BrowserRouter>
+   <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/home" element={<Home />} />
+    <Route path="*" element={<NotFound />} />
+   </Routes>
+  </BrowserRouter>
+ );
 }
 
 export default App;
