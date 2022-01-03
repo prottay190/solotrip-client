@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Alert, Button, Col, Container, Form, Row, Spinner } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import Headers from '../../Shared/Navbar/Headers';
 import { FaGoogle } from 'react-icons/fa';
@@ -8,7 +8,6 @@ import './Register.css'
 
 const Register = () => {
     const [logInData, setLoginData] = useState({});
-
     const { user, registerUser, isLoading, authError, singInUsingGoogle } = useAuth();
 
     const handleLoginSubmit = e => {

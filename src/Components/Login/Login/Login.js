@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Alert, Button, Col, Container, Form, Row, Spinner } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import Headers from '../../Shared/Navbar/Headers';
 import { FaGoogle } from 'react-icons/fa';
@@ -9,8 +9,13 @@ import './Login.css';
 const Login = () => {
     const [logInData, setLoginData] = useState({});
     const { user, loginUser, isLoading, authError, singInUsingGoogle } = useAuth();
+
+    const location = useLocation();
+    const navigate = useNavigate();
+
+
     const handleLoginSubmit = e => {
-        loginUser(logInData.email, logInData.password);
+        loginUser(logInData.email, logInData.password, location, navigate);
         e.preventDefault();
     }
 
@@ -20,6 +25,9 @@ const Login = () => {
         const newLoginData = { ...logInData };
         newLoginData[field] = value;
         setLoginData(newLoginData);
+    }
+    const handleGoogleSignIn = () => {
+        singInUsingGoogle(location, navigate)
     }
     return (
         <>
@@ -46,7 +54,7 @@ const Login = () => {
                                 <div className="divider div-transparent div-dot"></div>
                             </div>
                              <div>
-                              <button className="g-singin-btn" onClick={singInUsingGoogle} type='submit'><FaGoogle  style={{color: '#0F9D58', fontSize: '22px'}}/>  Google Sign In</button>
+                              <button className="g-singin-btn" onClick={handleGoogleSignIn} type='submit'><FaGoogle  style={{color: '#0F9D58', fontSize: '22px'}}/>  Google Sign In</button>
                              </div>
                             {isLoading && <Spinner animation="border" variant="info" />}
                             {user?.email && <Alert style={{marginTop: '10px'}} variant='success'>
