@@ -1,3 +1,6 @@
+.headers-container{
+    font-family:var(--montserrat-font);
+}
 .navbar-link-custom {
  text-decoration: none;
  margin: 0em 1.5em;
