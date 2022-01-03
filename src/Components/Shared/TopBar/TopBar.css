@@ -1,0 +1,7 @@
+.top-bar-text {
+ margin: 0;
+ color: var(--color-secondary);
+}
+.top-bar-border {
+ border-bottom: 2px solid #cfcfcf71;
+}
