@@ -2,8 +2,11 @@ import React from "react";
 import "./TopBar.css";
 import { FcCallback } from "react-icons/fc";
 import { HiOutlineMail } from "react-icons/hi";
+import { NavLink } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 
 const TopBar = () => {
+    const {user, logOut} = useAuth();
  return (
   <div className="container-fluid top-bar-border">
    <div className="container d-none d-md-flex justify-content-between py-2 top-bar-text">
@@ -17,6 +20,16 @@ const TopBar = () => {
      <p className="ms-4 my-0">
       <HiOutlineMail /> contact@solotrip.com
      </p>
+    {
+        user?.email ? 
+        <NavLink className="d-none d-lg-block" to="/login">
+        <button onClick={logOut} className="btn-regular navbar-book-btn">SignOut</button>
+       </NavLink>
+        :
+         <NavLink className="d-none d-lg-block" to="/login">
+         <button className="btn-regular navbar-book-btn">SignIn</button>
+        </NavLink>
+    }
     </div>
    </div>
   </div>
