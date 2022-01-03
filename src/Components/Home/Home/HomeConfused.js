@@ -45,8 +45,8 @@ const HomeConfused = () => {
                         <h3 className="heading h4">Spa - beauty & Health</h3>
                         <p>
                           Cheers to your new spa! Whether you want more
-                          relaxation, less stress, or a place to entertain,
-                          we’re sure you’re going to love it.
+                          relaxation, less stress, or a place to entertain, were
+                          sure youre going to love it.
                         </p>
                       </div>
                     </div>
