@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from "react";
 import "./TopBar.css";
 import { FcCallback } from "react-icons/fc";
@@ -38,5 +37,3 @@ const TopBar = () => {
 };
 
 export default TopBar;
-=======
->>>>>>> 0a613242012044931ee88f0361d645db41290d01
