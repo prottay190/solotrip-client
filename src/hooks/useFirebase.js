@@ -12,10 +12,12 @@ const useFirebase = () => {
   const auth = getAuth();
 
   //sign in
-  const loginUser = (email, password) => {
+  const loginUser = (email, password, location, navigate) => {
     setIsLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
+        const destination = location?.state?.from || '/';
+        navigate(destination)
         setAuthError('');
         // ...
       })
@@ -41,12 +43,14 @@ const useFirebase = () => {
   }
 
   //google singIn
-  const singInUsingGoogle = () => {
+  const singInUsingGoogle = (location, navigate) => {
     setIsLoading(true);
     const googleProvider = new GoogleAuthProvider();
     signInWithPopup(auth, googleProvider)
       .then(result => {
         setUser(result.user)
+        const destination = location?.state?.from || '/';
+        navigate(destination);
         //    console.log(result.user)
       })
       .finally(() => setIsLoading(false));

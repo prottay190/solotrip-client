@@ -5,21 +5,27 @@ import NotFound from "./Components/NotFound/NotFound";
 import Login from "./Components/Login/Login/Login";
 import Register from "./Components/Login/Register/Register";
 import AuthProvider from "./Context/AuthProvider/AuthProvider";
+import Rooms from "./Components/Rooms/Rooms";
+import PrivateRoute from "./Components/Login/Login/PrivateRoute/PrivateRoute";
 
 function App() {
- return (
-<AuthProvider>
-<BrowserRouter>
-   <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/home" element={<Home />} />
-    <Route path="/login" element={<Login />} />
-    <Route path="/register" element={<Register />} />
-    <Route path="*" element={<NotFound />} />
-   </Routes>
-  </BrowserRouter>
-</AuthProvider>
- );
+  return (
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/rooms" element={<PrivateRoute>
+            <Rooms />
+          </PrivateRoute>}>
+          </Route>
+          <Route path="/register" element={<Register />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
+  );
 }
 
 export default App;
