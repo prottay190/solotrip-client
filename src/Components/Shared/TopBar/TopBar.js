@@ -20,6 +20,7 @@ const TopBar = () => {
           <p className="ms-4 my-0">
             <HiOutlineMail /> contact@solotrip.com
           </p>
+          
           {user?.email ? (
             <NavLink className="d-none d-lg-block" to="/login">
               <button onClick={logOut} className="btn-regular navbar-book-btn">
@@ -30,6 +31,7 @@ const TopBar = () => {
             <NavLink className="d-none d-lg-block" to="/login">
               <button className="btn-regular navbar-book-btn">SignIn</button>
             </NavLink>
+
           )}
         </div>
       </div>
