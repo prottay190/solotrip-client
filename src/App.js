@@ -7,6 +7,7 @@ import Register from "./Components/Login/Register/Register";
 import AuthProvider from "./Context/AuthProvider/AuthProvider";
 import Rooms from "./Components/Rooms/Rooms";
 import PrivateRoute from "./Components/Login/Login/PrivateRoute/PrivateRoute";
+import Contact from "./Components/Contact/Contact";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/contactus" element={<Contact />} />
           <Route path="/rooms" element={<PrivateRoute>
             <Rooms />
           </PrivateRoute>}>
