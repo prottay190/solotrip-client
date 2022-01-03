@@ -53,8 +53,8 @@ const Contact = () => {
                         <Row className='p-2'>
                             <Col><a href='https://www.linkedin.com/in/prottay-roy-arnob-791181213/'><FaLinkedin style={{fontSize: '35px', color: '#0077b5', borderRadius: '10px'}} /></a></Col>
                             <Col><a href='https://www.linkedin.com/in/shihab-shumon/?fbclid=IwAR3EQdnJGIaTNpQiSS2NRuBUaGHvHnJqkyFzg6zE_FfgCLgb2qlQpxHyOEk'><FaLinkedin style={{fontSize: '35px', color: '#0077b5', borderRadius: '10px'}} /></a></Col>
-                            <Col><a to=''><FaLinkedin style={{fontSize: '35px', color: '#0077b5', borderRadius: '10px'}} /></a></Col>
-                            <Col><a to=''><FaLinkedin style={{fontSize: '35px', color: '#0077b5', borderRadius: '10px'}} /></a></Col>
+                            <Col><a href=''><FaLinkedin style={{fontSize: '35px', color: '#0077b5', borderRadius: '10px'}} /></a></Col>
+                            <Col><a href=''><FaLinkedin style={{fontSize: '35px', color: '#0077b5', borderRadius: '10px'}} /></a></Col>
                         </Row>
                     </Col>
                 </Row>
