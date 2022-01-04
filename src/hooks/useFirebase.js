@@ -1,14 +1,20 @@
 import { useEffect, useState } from "react";
 import initializeFirebase from "../Components/Login/Firebase/firebase.init";
-import { getAuth, createUserWithEmailAndPassword, signOut, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-
+import {
+  getAuth,
+  updateProfile,
+  createUserWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+  signInWithEmailAndPassword
+} from "firebase/auth";
 initializeFirebase();
 
 const useFirebase = () => {
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  const [authError, setAuthError] = useState('');
-
+  const [authError, setAuthError] = useState("");
+  const [admin, setAdmin] = useState(false);
   const auth = getAuth();
 
   //sign in
@@ -16,25 +22,28 @@ const useFirebase = () => {
     setIsLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const destination = location?.state?.from || '/';
-        navigate(destination)
-        setAuthError('');
+        const destination = location?.state?.from || "/";
+        navigate(destination);
+        setAuthError("");
         // ...
       })
       .catch((error) => {
         setAuthError(error.message);
       })
       .finally(() => setIsLoading(false));
-  }
+  };
   //register
-  const registerUser = (email, password,  location, navigate) => {
+  const registerUser = (email, password, name, navigate) => {
     setIsLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed in 
-        const destination = location?.state?.from || '/';
-        navigate(destination)
-        setAuthError('');
+        updateProfile(auth.currentUser, {
+          displayName: name,
+        }).then(() => {});
+        setUser(userCredential.user);
+        saveUserToDB(name, email);
+        navigate("/");
+        setAuthError("");
         // ...
       })
       .catch((error) => {
@@ -42,58 +51,59 @@ const useFirebase = () => {
         // ..
       })
       .finally(() => setIsLoading(false));
-  }
+  };
 
-  //google singIn
-  const singInUsingGoogle = (location, navigate) => {
-    setIsLoading(true);
-    const googleProvider = new GoogleAuthProvider();
-    signInWithPopup(auth, googleProvider)
-      .then(result => {
-        setUser(result.user)
-        const destination = location?.state?.from || '/';
-        navigate(destination);
-        //    console.log(result.user)
-      })
-      .finally(() => setIsLoading(false));
 
-  }
-
-  //state change
+  // observe the user
   useEffect(() => {
-    const unscribed = onAuthStateChanged(auth, (user) => {
+    const unSubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        const uid = user.uid;
         setUser(user);
-        // ...
+        // setAdminLoading(true);
+        fetch(`http://localhost:5000/users/${user?.email}`)
+          .then((res) => res.json())
+          .then((data) => setAdmin(data.admin));
+        // .finally(() => );
       } else {
-        setUser({})
+        setUser({});
       }
       setIsLoading(false);
     });
-    return () => unscribed;
-  }, [])
-
+    return () => unSubscribe;
+  }, [auth]);
   //logout
   const logOut = () => {
     setIsLoading(true);
-    signOut(auth).then(() => {
-      // Sign-out successful.
-    }).catch((error) => {
-      // An error happened.
-    })
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+      })
+      .catch((error) => {
+        // An error happened.
+      })
       .finally(() => setIsLoading(false));
-  }
-
+  };
+  const saveUserToDB = (name, email) => {
+    const user = { name, email };
+    fetch("http://localhost:5000/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
   return {
     user,
     isLoading,
     authError,
-    singInUsingGoogle,
     registerUser,
     loginUser,
-    logOut
-  }
-}
+    logOut,
+    admin,
+  };
+};
 
 export default useFirebase;
