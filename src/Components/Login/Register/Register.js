@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Alert,  Col, Container, Form, Row, Spinner } from 'react-bootstrap';
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import Headers from "../../Shared/Navbar/Headers";
 import "./Register.css";
@@ -8,10 +8,11 @@ import Footer from "../../Shared/Footer/Footer";
 
 const Register = () => {
   const [logInData, setLoginData] = useState({});
+  const navigate = useNavigate();
   const { user, registerUser, isLoading, authError } = useAuth();
 
   const handleLoginSubmit = (e) => {
-    registerUser(logInData.email, logInData.password, logInData.name);
+    registerUser(logInData.email, logInData.password, logInData.name, navigate);
     e.preventDefault();
   };
 

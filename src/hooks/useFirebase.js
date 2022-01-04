@@ -6,13 +6,11 @@ import {
   createUserWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
 } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 initializeFirebase();
 
 const useFirebase = () => {
-  const navigate = useNavigate();
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [authError, setAuthError] = useState("");
@@ -21,7 +19,7 @@ const useFirebase = () => {
   const auth = getAuth();
 
   //sign in
-  const loginUser = (email, password, location) => {
+  const loginUser = (email, password, location, navigate) => {
     setIsLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -36,7 +34,7 @@ const useFirebase = () => {
       .finally(() => setIsLoading(false));
   };
   //register
-  const registerUser = (email, password, name) => {
+  const registerUser = (email, password, name, navigate) => {
     setIsLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -47,9 +45,11 @@ const useFirebase = () => {
         saveUserToDB(name, email);
         navigate("/");
         setAuthError("");
+        // ...
       })
       .catch((error) => {
         setAuthError(error.message);
+        // ..
       })
       .finally(() => setIsLoading(false));
   };
@@ -75,8 +75,12 @@ const useFirebase = () => {
   const logOut = () => {
     setIsLoading(true);
     signOut(auth)
-      .then(() => {})
-      .catch((error) => {})
+      .then(() => {
+        // Sign-out successful.
+      })
+      .catch((error) => {
+        // An error happened.
+      })
       .finally(() => setIsLoading(false));
   };
   const saveUserToDB = (name, email) => {
