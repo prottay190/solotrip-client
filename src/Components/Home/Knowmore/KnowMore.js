@@ -4,7 +4,7 @@ import "./KnowMore.css";
 
 const KnowMore = () => {
   return (
-    <Container className="mt-4">
+    <Container className="mt-4 pb-4">
       <Row xs={1} md={2} lg={3} className="g-4">
         <Col>
           <Card className="head2-styling">
