@@ -5,7 +5,7 @@ import "./Hotels.css";
 const Hotels = () => {
   const [hotels, setHotels] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/hotels")
+    fetch("https://fierce-refuge-49185.herokuapp.com/hotels")
       .then((res) => res.json())
       .then((data) => setHotels(data));
   }, []);

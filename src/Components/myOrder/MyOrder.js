@@ -9,14 +9,14 @@ const MyOrder = () => {
   const [myOrders, setMyOrders] = useState();
   console.log(myOrders);
   useEffect(() => {
-    fetch(`http://localhost:5000/orders/${user?.email}`)
+    fetch(`https://fierce-refuge-49185.herokuapp.com/orders/${user?.email}`)
       .then((res) => res.json())
       .then((orders) => {
         setMyOrders(orders);
       });
   }, [user?.email]);
   const handleDeleteOrder = (id) => {
-    fetch(`http://localhost:5000/orders/${id}`, {
+    fetch(`https://fierce-refuge-49185.herokuapp.com/orders/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

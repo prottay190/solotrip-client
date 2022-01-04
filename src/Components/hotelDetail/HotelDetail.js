@@ -9,7 +9,7 @@ const HotelDetail = () => {
   const { user } = useAuth();
   const [singleHotel, setSingleHotel] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/hotels/${id}`)
+    fetch(`https://fierce-refuge-49185.herokuapp.com/hotels/${id}`)
       .then((res) => res.json())
       .then((data) => setSingleHotel(data));
   }, [id]);
@@ -22,7 +22,7 @@ const HotelDetail = () => {
       status: "pending",
       email: user.email,
     };
-    fetch("http://localhost:5000/orders", {
+    fetch("https://fierce-refuge-49185.herokuapp.com/orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newData),

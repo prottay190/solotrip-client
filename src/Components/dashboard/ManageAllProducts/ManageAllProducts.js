@@ -4,12 +4,12 @@ import { Button, Card, Col, Container, Row } from "react-bootstrap";
 const ManageAllProducts = () => {
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/hotels")
+    fetch("https://fierce-refuge-49185.herokuapp.com/hotels")
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
   const handleDeleteHotel = (id) => {
-    fetch(`http://localhost:5000/hotels/${id}`, {
+    fetch(`https://fierce-refuge-49185.herokuapp.com/hotels/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
