@@ -13,7 +13,7 @@ const CaptionCard = () => {
             <Card className="bg-white text-white">
               <Card.Img src={emirate} alt="Card image" />
               <Card.ImgOverlay>
-                <Card.Text> We Partened with Emirates Airline</Card.Text>
+                <Card.Text> We Partnered with Emirates Airline</Card.Text>
               </Card.ImgOverlay>
             </Card>
           </Col>
