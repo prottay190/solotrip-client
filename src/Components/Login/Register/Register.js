@@ -34,6 +34,7 @@ const Register = () => {
                 <h2 className="register-text">Please Register</h2>
                 {!isLoading && (
                   <>
+                  <Form onSubmit={handleLoginSubmit}>
                     <Form.Group className="mb-3" controlId="formGroupEmail">
                       <Form.Label>Your Name</Form.Label>
                       <Form.Control
@@ -43,7 +44,7 @@ const Register = () => {
                         placeholder="Enter your Name"
                       />
                     </Form.Group>
-                    <Form onSubmit={handleLoginSubmit}>
+                  
                       <Form.Group className="mb-3" controlId="formGroupEmail">
                         <Form.Label>Email address</Form.Label>
                         <Form.Control

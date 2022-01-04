@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Col, Container, Form, Row } from 'react-bootstrap';
 import { Link as a } from 'react-router-dom';
 import Headers from '../Shared/Navbar/Headers';
@@ -6,8 +6,22 @@ import './Contact.css';
 import map from '../../images/map-of-bangladesh.jpg';
 import { FaLinkedin } from 'react-icons/fa';
 import Footer from '../Shared/Footer/Footer';
+import { Alert } from 'bootstrap';
 
 const Contact = () => {
+    const [fromData, setFromData] = useState({});
+
+    const handleOnSubmit = e =>{
+        alert('Massege send successfuly')
+        e.preventDefault();
+    }
+    const handleOnBlur = e =>{
+        const field = e.target.name;
+        const value = e.target.value;
+        const newLoginData = { ...fromData };
+        newLoginData[field] = value;
+        setFromData(newLoginData);
+    }
     return (
         <>
             <Headers></Headers>
@@ -19,32 +33,32 @@ const Contact = () => {
             <Container className='p-5'>
                 <Row>
                     <Col lg={7} sm={12}>
-                        <Form className='contact-from'>
+                        <Form onSubmit={handleOnSubmit} className='contact-from'>
                             <Row>
                                 <Col>
-                                    <Form.Control type="text" placeholder="Your Name" />
+                                    <Form.Control type="text" required onBlur={handleOnBlur} placeholder="Your Name" />
                                 </Col>
                                 <Col>
-                                    <Form.Control type="number" placeholder="Your Number" />
-                                </Col>
-                            </Row>
-                            <Row className='mt-5'>
-                                <Col>
-                                    <Form.Control type="email" placeholder="Enter Email" />
-                                </Col>
-                                <Col>
-                                    <Form.Control type="text" placeholder="Subject" />
+                                    <Form.Control type="number" required onBlur={handleOnBlur} placeholder="Your Number" />
                                 </Col>
                             </Row>
                             <Row className='mt-5'>
                                 <Col>
-                                    <Form.Control as="textarea" placeholder='Your Massage' rows={8} />
+                                    <Form.Control type="email" required onBlur={handleOnBlur} placeholder="Enter Email" />
+                                </Col>
+                                <Col>
+                                    <Form.Control type="text" required onBlur={handleOnBlur} placeholder="Subject" />
+                                </Col>
+                            </Row>
+                            <Row className='mt-5'>
+                                <Col>
+                                    <Form.Control as="textarea" required onBlur={handleOnBlur} placeholder='Your Massage' rows={8} />
                                 </Col>
                             </Row>
                             <Form.Check className='mt-4' label="Accept Terms and Conditions" />
                             <Row className='p-5'>
                                 <Col>
-                                    <button style={{ padding: '15px', borderRadius: '10px', fontSize: '16px' }} className="btn-regular navbar-book-btn">Send Your Massege Now</button>
+                                    <button style={{ padding: '15px', borderRadius: '10px', fontSize: '16px' }} className="btn-regular navbar-book-btn" type="submit">Send Your Massege Now</button>
                                 </Col>
                             </Row>
                         </Form>
