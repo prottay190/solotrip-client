@@ -34,6 +34,9 @@ const Headers = () => {
               <Link to="/about" className="navbar-link-custom">
                 ABOUT
               </Link>
+              <Link to="/dashboard" className="navbar-link-custom">
+                DASHBOARD
+              </Link>
               <Link to="/contactus" className="navbar-link-custom">
                 CONTACT US
               </Link>

@@ -8,17 +8,20 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword
 } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 initializeFirebase();
 
 const useFirebase = () => {
+  const navigate = useNavigate();
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [authError, setAuthError] = useState("");
   const [admin, setAdmin] = useState(false);
+  const [adminLoading, setAdminLoading] = useState(false);
   const auth = getAuth();
 
   //sign in
-  const loginUser = (email, password, location, navigate) => {
+  const loginUser = (email, password, location) => {
     setIsLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -33,7 +36,7 @@ const useFirebase = () => {
       .finally(() => setIsLoading(false));
   };
   //register
-  const registerUser = (email, password, name, navigate) => {
+  const registerUser = (email, password, name) => {
     setIsLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -44,26 +47,23 @@ const useFirebase = () => {
         saveUserToDB(name, email);
         navigate("/");
         setAuthError("");
-        // ...
       })
       .catch((error) => {
         setAuthError(error.message);
-        // ..
       })
       .finally(() => setIsLoading(false));
   };
-
 
   // observe the user
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        // setAdminLoading(true);
+        setAdminLoading(true);
         fetch(`http://localhost:5000/users/${user?.email}`)
           .then((res) => res.json())
-          .then((data) => setAdmin(data.admin));
-        // .finally(() => );
+          .then((data) => setAdmin(data.admin))
+          .finally(() => setAdminLoading(false));
       } else {
         setUser({});
       }
@@ -75,12 +75,8 @@ const useFirebase = () => {
   const logOut = () => {
     setIsLoading(true);
     signOut(auth)
-      .then(() => {
-        // Sign-out successful.
-      })
-      .catch((error) => {
-        // An error happened.
-      })
+      .then(() => {})
+      .catch((error) => {})
       .finally(() => setIsLoading(false));
   };
   const saveUserToDB = (name, email) => {
@@ -103,6 +99,7 @@ const useFirebase = () => {
     loginUser,
     logOut,
     admin,
+    adminLoading,
   };
 };
 

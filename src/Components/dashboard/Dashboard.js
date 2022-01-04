@@ -1,14 +1,8 @@
 import Button from "@restart/ui/esm/Button";
 import React, { useState } from "react";
 import { Offcanvas } from "react-bootstrap";
-import useAuth from "../../../hooks/useAuth";
-import MyOrders from "../MyOrders/MyOrders";
-import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
-import MakeAdmin from "../MakeAdmin/MakeAdmin";
-import AdminRoute from "../../Login/AdminRoute/AdminRoute";
-import ManageAllOrders from "../ManageAllOrders/ManageAllOrders";
-import Review from "../Review/Review";
-import ManageProduct from "../ManageProduct/ManageProduct";
+import { Link, Outlet } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 
 const Dashboard = () => {
   const [show, setShow] = useState(false);
@@ -16,9 +10,6 @@ const Dashboard = () => {
   const toggleShow = () => setShow((s) => !s);
 
   const { logOut, admin, user } = useAuth();
-
-  let { path, url } = useRouteMatch();
-
   return (
     <>
       <Offcanvas
@@ -31,47 +22,32 @@ const Dashboard = () => {
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>
             <h2>Dashboard</h2>
-            <p>User: {user.displayName}</p>
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <button
-            onClick={() => alert("Payment system coming soon!")}
-            className="btn-regular d-block my-2"
-          >
-            Pay
-          </button>
-          <Link to="/dashboard" className="text-decoration-none">
-            <button className="btn-regular d-block my-2">My Orders</button>
-          </Link>
-          <Link to={`${url}/review`} className="text-decoration-none">
-            <button className="btn-regular d-block my-2">Review</button>
-          </Link>
-          {admin && (
-            <div>
-              <Link
-                to={`${url}/manageallorders`}
-                className="text-decoration-none"
-              >
-                <button className="btn-regular d-block my-2">
-                  Manage All Orders
-                </button>
-              </Link>
-              <Link
-                to={`${url}/manageproducts`}
-                className="text-decoration-none"
-              >
-                <button className="btn-regular d-block my-2">
-                  Manage Product
-                </button>
-              </Link>
-              <Link to={`${url}/makeadmin`} className="text-decoration-none">
-                <button className="btn-regular d-block my-2">
-                  Make An Admin
-                </button>
-              </Link>
-            </div>
-          )}
+          <div>
+            <Link
+              to={`/dashboard/manageallorders`}
+              className="text-decoration-none"
+            >
+              <button className="btn-regular d-block my-2">
+                Manage All Orders
+              </button>
+            </Link>
+            <Link
+              to={`/dashboard/manageallproducts`}
+              className="text-decoration-none"
+            >
+              <button className="btn-regular d-block my-2">
+                Manage Product
+              </button>
+            </Link>
+            <Link to={`/dashboard/makeadmin`} className="text-decoration-none">
+              <button className="btn-regular d-block my-2">
+                Make An Admin
+              </button>
+            </Link>
+          </div>
           <Link to="/" className="text-decoration-none">
             <button className="btn-regular bg-success d-block my-2">
               Go back home
@@ -92,25 +68,7 @@ const Dashboard = () => {
           Manage
         </Button>
         <i className="fas fs-5 fa-cog text-muted"></i>
-        <div>
-          <Switch>
-            <Route exact path={path}>
-              <MyOrders></MyOrders>
-            </Route>
-            <Route path={`${path}/review`}>
-              <Review></Review>
-            </Route>
-            <AdminRoute path={`${path}/manageallorders`}>
-              <ManageAllOrders></ManageAllOrders>
-            </AdminRoute>
-            <AdminRoute path={`${path}/manageproducts`}>
-              <ManageProduct></ManageProduct>
-            </AdminRoute>
-            <AdminRoute path={`${path}/makeadmin`}>
-              <MakeAdmin></MakeAdmin>
-            </AdminRoute>
-          </Switch>
-        </div>
+        <Outlet />
       </div>
     </>
   );

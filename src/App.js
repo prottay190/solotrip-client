@@ -11,6 +11,11 @@ import Contact from "./Components/Contact/Contact";
 import About from "./Components/About/About";
 import HotelDetail from "./Components/hotelDetail/HotelDetail";
 import MyOrder from "./Components/myOrder/MyOrder";
+import AdminRoute from "./Components/Shared/Adminroute/AdminRoute";
+import Dashboard from "./Components/dashboard/Dashboard";
+import ManageAllOrders from "./Components/dashboard/ManageAllOrders/ManageAllOrders";
+import ManageAllProducts from "./Components/dashboard/ManageAllProducts/ManageAllProducts";
+import MakeAdmin from "./Components/dashboard/makeAdmin/MakeAdmin";
 
 function App() {
   return (
@@ -29,6 +34,38 @@ function App() {
               <PrivateRoute>
                 <Rooms />
               </PrivateRoute>
+            }
+          ></Route>
+          <Route
+            path="/dashboard"
+            element={
+              <AdminRoute>
+                <Dashboard />
+              </AdminRoute>
+            }
+          ></Route>
+          <Route
+            path="/dashboard/manageallorders"
+            element={
+              <AdminRoute>
+                <ManageAllOrders />
+              </AdminRoute>
+            }
+          ></Route>
+          <Route
+            path="/dashboard/manageallproducts"
+            element={
+              <AdminRoute>
+                <ManageAllProducts />
+              </AdminRoute>
+            }
+          ></Route>
+          <Route
+            path="/dashboard/makeadmin"
+            element={
+              <AdminRoute>
+                <MakeAdmin />
+              </AdminRoute>
             }
           ></Route>
           <Route path="/register" element={<Register />} />
