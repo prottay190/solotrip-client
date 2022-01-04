@@ -96,7 +96,6 @@ const Register = () => {
                 </Alert>
               )}
               {authError && <Alert variant="danger">{authError}</Alert>}
-            </div>
           </Col>
           <Col lg={2}></Col>
         </Row>
