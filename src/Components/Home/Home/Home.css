@@ -1,12 +1,12 @@
 .dual-tone {
   background: linear-gradient(
     45deg,
-    #845ec2,
-    #d65db2f3,
-    #ff6f91,
-    #ff9771,
-    #ffc75ff7,
-    #f9f971ea
+    #845ec2d7,
+    #87e4df95,
+    #ff6f917e,
+    #ff9771e7,
+    #f0f0f0,
+    #f2f26eea
   );
   background-size: 600% 600%;
   -webkit-animation: AnimationName 8s ease infinite;

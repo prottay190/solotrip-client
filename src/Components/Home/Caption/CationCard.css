@@ -1,11 +1,9 @@
 .cap {
+  font-family: var(--nunito-font);
+  font-weight: 500;
+  margin-top: 15px;
   font-size: 3em;
-
-  background: radial-gradient(
-    circle,
-    rgba(170, 41, 15, 1) 19%,
-    rgba(27, 27, 27, 1) 100%
-  );
+  background: -webkit-linear-gradient(rgb(33, 154, 163), rgb(189, 17, 17));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
