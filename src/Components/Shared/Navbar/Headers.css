@@ -9,10 +9,10 @@
  transition: all 200ms;
 }
 .navbar-link-custom:hover {
- color: #deb666;
+ color: var(--yellow-color);
 }
 .btn-regular {
- background-color: #deb666;
+ background-color: var(--yellow-color);
  border: none;
  color: #fff;
  padding: 0.3em 1em;
@@ -30,5 +30,5 @@
  /* border: 1px solid red; */
 }
 .nav-logo-text-span {
- color: #deb666;
+ color: var(--yellow-color);
 }

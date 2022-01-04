@@ -3,7 +3,11 @@ import React from "react";
 const HomeAboutSection = () => {
   return (
     <>
-      <section className="slice slice-lg mt-5" data-delimiter="1">
+      <section
+        className="slice slice-lg mt-5"
+        data-delimiter="1"
+        style={{ fontFamily: "var(--montserrat-font)" }}
+      >
         <div className="container">
           <div className="row cols-xs-space cols-sm-space align-items-center">
             <div className="col-md-6">
