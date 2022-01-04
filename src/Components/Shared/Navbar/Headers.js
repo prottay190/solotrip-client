@@ -28,8 +28,8 @@ const Headers = () => {
               <Link to="/" className="navbar-link-custom">
                 HOME
               </Link>
-              <Link to="/rooms" className="navbar-link-custom">
-                ROOMS
+              <Link to="/myorders" className="navbar-link-custom">
+                My Orders
               </Link>
               <Link to="/about" className="navbar-link-custom">
                 ABOUT
