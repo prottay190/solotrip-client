@@ -10,6 +10,7 @@ import PrivateRoute from "./Components/Login/Login/PrivateRoute/PrivateRoute";
 import Contact from "./Components/Contact/Contact";
 import About from "./Components/About/About";
 import HotelDetail from "./Components/hotelDetail/HotelDetail";
+import MyOrder from "./Components/myOrder/MyOrder";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             }
           ></Route>
           <Route path="/register" element={<Register />} />
+          <Route path="/myorders" element={<MyOrder />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

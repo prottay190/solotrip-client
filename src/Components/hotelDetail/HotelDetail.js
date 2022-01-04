@@ -3,9 +3,10 @@ import { Col, Container, Row } from "react-bootstrap";
 import { useParams } from "react-router";
 import "./HotelDetail.css";
 import Headers from "../Shared/Navbar/Headers";
+import useAuth from "../../hooks/useAuth";
 const HotelDetail = () => {
   const { id } = useParams();
-  console.log(id);
+  const { user } = useAuth();
   const [singleHotel, setSingleHotel] = useState({});
   useEffect(() => {
     fetch(`http://localhost:5000/hotels/${id}`)
@@ -14,7 +15,13 @@ const HotelDetail = () => {
   }, [id]);
   const { hotel_name, description, heading, main_image, price } = singleHotel;
   const onSubmit = () => {
-    let newData = { hotel_name, main_image, price, status: "pending" };
+    let newData = {
+      hotel_name,
+      main_image,
+      price,
+      status: "pending",
+      email: user.email,
+    };
     fetch("http://localhost:5000/orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
