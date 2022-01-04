@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { Alert,  Col, Container, Form, Row, Spinner } from 'react-bootstrap';
-import { NavLink, useNavigate } from 'react-router-dom';
-import useAuth from '../../../hooks/useAuth';
-import Headers from '../../Shared/Navbar/Headers';
-import './Register.css'
-import Footer from '../../Shared/Footer/Footer';
+import { NavLink, useNavigate } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
+import Headers from "../../Shared/Navbar/Headers";
+import "./Register.css";
+import Footer from "../../Shared/Footer/Footer";
 
 const Register = () => {
-    const [logInData, setLoginData] = useState({});
-    const navigate = useNavigate();
-    const { user, registerUser, isLoading, authError } = useAuth();
+  const [logInData, setLoginData] = useState({});
+  const navigate = useNavigate();
+  const { user, registerUser, isLoading, authError } = useAuth();
 
-    const handleLoginSubmit = e => {
-        registerUser(logInData.email, logInData.password, logInData.name, navigate);
-        e.preventDefault();
-    }
+  const handleLoginSubmit = (e) => {
+    registerUser(logInData.email, logInData.password, logInData.name, navigate);
+    e.preventDefault();
+  };
 
     const handleOnChange = e => {
         const field = e.target.name;
@@ -36,12 +36,12 @@ const Register = () => {
                   <>
                   <Form onSubmit={handleLoginSubmit}>
                     <Form.Group className="mb-3" controlId="formGroupEmail">
-                      <Form.Label>Your Name</Form.Label>
+                      <Form.Label>Email address</Form.Label>
                       <Form.Control
-                        type="text"
-                        name="text"
+                        type="email"
+                        name="email"
                         onChange={handleOnChange}
-                        placeholder="Enter your Name"
+                        placeholder="Enter email"
                       />
                     </Form.Group>
                   
@@ -89,13 +89,21 @@ const Register = () => {
                 )}
                 {authError && <Alert variant="danger">{authError}</Alert>}
               </div>
-            </Col>
-            <Col lg={2}></Col>
-          </Row>
-        </Container>
-        <Footer></Footer>
-      </>
-    );
+              {isLoading && <Spinner animation="border" variant="info" />}
+              {user?.email && (
+                <Alert style={{ marginTop: "10px" }} variant="success">
+                  successfuly Registger!
+                </Alert>
+              )}
+              {authError && <Alert variant="danger">{authError}</Alert>}
+            </div>
+          </Col>
+          <Col lg={2}></Col>
+        </Row>
+      </Container>
+      <Footer></Footer>
+    </>
+  );
 };
 
 export default Register;

@@ -6,7 +6,7 @@ import {
   createUserWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 initializeFirebase();
 
@@ -15,6 +15,7 @@ const useFirebase = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [authError, setAuthError] = useState("");
   const [admin, setAdmin] = useState(false);
+  const [adminLoading, setAdminLoading] = useState(false);
   const auth = getAuth();
 
   //sign in
@@ -53,17 +54,16 @@ const useFirebase = () => {
       .finally(() => setIsLoading(false));
   };
 
-
   // observe the user
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        // setAdminLoading(true);
+        setAdminLoading(true);
         fetch(`http://localhost:5000/users/${user?.email}`)
           .then((res) => res.json())
-          .then((data) => setAdmin(data.admin));
-        // .finally(() => );
+          .then((data) => setAdmin(data.admin))
+          .finally(() => setAdminLoading(false));
       } else {
         setUser({});
       }
@@ -103,6 +103,7 @@ const useFirebase = () => {
     loginUser,
     logOut,
     admin,
+    adminLoading,
   };
 };
 

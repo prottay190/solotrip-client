@@ -9,45 +9,45 @@ import client6 from "../../../images/client-6.png";
 const Partner = () => {
   return (
     <>
-      <section class="slice">
-        <div class="container">
-          <div class="mb-md text-center">
-            <h3 style={{ marginTop: "50px" }} class="heading h2">
-              Trusted by over <span class="text-success">30k</span> clients
+      <section className="slice">
+        <div className="container">
+          <div className="mb-md text-center">
+            <h3 style={{ marginTop: "50px" }} className="heading h2">
+              Trusted by over <span className="text-success">30k</span> clients
             </h3>
-            <div class="fluid-paragraph mt-3">
-              <p class="lead">Global Brands</p>
+            <div className="fluid-paragraph mt-3">
+              <p className="lead">Global Brands</p>
             </div>
           </div>
-          <div class="row cols-xs-space cols-sm-space cols-md-space">
-            <div class="col-md-2 col-6">
-              <div class="px-4 py-4 rounded">
-                <img src={client1} alt="" class="img-fluid" />
+          <div className="row cols-xs-space cols-sm-space cols-md-space">
+            <div className="col-md-2 col-6">
+              <div className="px-4 py-4 rounded">
+                <img src={client1} alt="" className="img-fluid" />
               </div>
             </div>
-            <div class="col-md-2 col-6">
-              <div class="px-4 py-4 rounded">
-                <img src={client2} alt="" class="img-fluid" />
+            <div className="col-md-2 col-6">
+              <div className="px-4 py-4 rounded">
+                <img src={client2} alt="" className="img-fluid" />
               </div>
             </div>
-            <div class="col-md-2 col-6">
-              <div class="px-4 py-4 rounded">
-                <img src={client3} alt="" class="img-fluid" />
+            <div className="col-md-2 col-6">
+              <div className="px-4 py-4 rounded">
+                <img src={client3} alt="" className="img-fluid" />
               </div>
             </div>
-            <div class="col-md-2 col-6">
-              <div class="px-4 py-4 rounded">
-                <img src={client4} alt="" class="img-fluid" />
+            <div className="col-md-2 col-6">
+              <div className="px-4 py-4 rounded">
+                <img src={client4} alt="" className="img-fluid" />
               </div>
             </div>
-            <div class="col-md-2 col-6">
-              <div class="px-4 py-4 rounded">
-                <img src={client5} alt="" class="img-fluid" />
+            <div className="col-md-2 col-6">
+              <div className="px-4 py-4 rounded">
+                <img src={client5} alt="" className="img-fluid" />
               </div>
             </div>
-            <div class="col-md-2 col-6">
-              <div class="px-4 py-4 rounded">
-                <img src={client6} alt="" class="img-fluid" />
+            <div className="col-md-2 col-6">
+              <div className="px-4 py-4 rounded">
+                <img src={client6} alt="" className="img-fluid" />
               </div>
             </div>
           </div>

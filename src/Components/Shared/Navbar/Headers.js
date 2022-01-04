@@ -28,11 +28,14 @@ const Headers = () => {
               <Link to="/" className="navbar-link-custom">
                 HOME
               </Link>
-              <Link to="/rooms" className="navbar-link-custom">
-                ROOMS
+              <Link to="/myorders" className="navbar-link-custom">
+                My Orders
               </Link>
               <Link to="/about" className="navbar-link-custom">
                 ABOUT
+              </Link>
+              <Link to="/dashboard" className="navbar-link-custom">
+                DASHBOARD
               </Link>
               <Link to="/contactus" className="navbar-link-custom">
                 CONTACT US

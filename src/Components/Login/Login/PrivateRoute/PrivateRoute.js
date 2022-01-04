@@ -9,8 +9,8 @@ const PrivateRoute = ({ children, ...rest }) => {
     if (isLoading) {
         return <Spinner animation="border"  variant="info" />
     }
-    if (user.email) {
-        return children;
+    if (user?.email) {
+      return children;
     }
     return <Navigate to="/login" state={{ from: location }} />;
 
