@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
-import { Alert, Button, Col, Container, Form, Row, Spinner } from 'react-bootstrap';
+import { Alert,  Col, Container, Form, Row, Spinner } from 'react-bootstrap';
 import { NavLink, useNavigate } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import Headers from '../../Shared/Navbar/Headers';
 import { FaGoogle } from 'react-icons/fa';
 import './Register.css'
+import Footer from '../../Shared/Footer/Footer';
 
 const Register = () => {
     const [logInData, setLoginData] = useState({});
+    const navigate = useNavigate();
     const { user, registerUser, isLoading, authError, singInUsingGoogle } = useAuth();
 
     const handleLoginSubmit = e => {
-        registerUser(logInData.email, logInData.password, logInData.name);
+        registerUser(logInData.email, logInData.password, logInData.name, navigate);
         e.preventDefault();
     }
 
@@ -67,6 +69,7 @@ const Register = () => {
                     <Col lg={2}></Col>
                 </Row>
             </Container>
+            <Footer></Footer>
         </>
     );
 };

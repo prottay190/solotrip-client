@@ -5,6 +5,7 @@ import useAuth from '../../../hooks/useAuth';
 import Headers from '../../Shared/Navbar/Headers';
 import { FaGoogle } from 'react-icons/fa';
 import './Login.css';
+import Footer from '../../Shared/Footer/Footer';
 
 const Login = () => {
     const [logInData, setLoginData] = useState({});
@@ -68,7 +69,7 @@ const Login = () => {
                     <Col lg={2}></Col>
                 </Row>
             </Container>
-
+          <Footer></Footer>
         </>
     );
 };

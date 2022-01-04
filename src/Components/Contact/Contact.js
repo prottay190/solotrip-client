@@ -5,6 +5,7 @@ import Headers from '../Shared/Navbar/Headers';
 import './Contact.css';
 import map from '../../images/map-of-bangladesh.jpg';
 import { FaLinkedin } from 'react-icons/fa';
+import Footer from '../Shared/Footer/Footer';
 
 const Contact = () => {
     return (
@@ -53,12 +54,13 @@ const Contact = () => {
                         <Row className='p-2'>
                             <Col><a href='https://www.linkedin.com/in/prottay-roy-arnob-791181213/'><FaLinkedin style={{fontSize: '35px', color: '#0077b5', borderRadius: '10px'}} /></a></Col>
                             <Col><a href='https://www.linkedin.com/in/shihab-shumon/?fbclid=IwAR3EQdnJGIaTNpQiSS2NRuBUaGHvHnJqkyFzg6zE_FfgCLgb2qlQpxHyOEk'><FaLinkedin style={{fontSize: '35px', color: '#0077b5', borderRadius: '10px'}} /></a></Col>
-                            <Col><a href=''><FaLinkedin style={{fontSize: '35px', color: '#0077b5', borderRadius: '10px'}} /></a></Col>
+                            <Col><a href='https://www.linkedin.com/in/ahmed-towsik?fbclid=IwAR0O6jNm5vDeAG90Rr2m6tBBRsRBPuUb2aEFJtaCpPkv9VysiuS_m_Pq5Mo'><FaLinkedin style={{fontSize: '35px', color: '#0077b5', borderRadius: '10px'}} /></a></Col>
                             <Col><a href=''><FaLinkedin style={{fontSize: '35px', color: '#0077b5', borderRadius: '10px'}} /></a></Col>
                         </Row>
                     </Col>
                 </Row>
             </Container>
+            <Footer></Footer>
         </>
     );
 };
