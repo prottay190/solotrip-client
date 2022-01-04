@@ -14,7 +14,7 @@
     box-shadow: 10px 10px 5px  #aaaaaa;
  }
  .lonin-btn{
-   background-color: #deb666;
+   background-color: var(--yellow-color);
    border: none;
    color: #fff;
    border-radius: 10px;
@@ -48,7 +48,7 @@
 }
 
 .g-singin-btn{
-   background-color: #deb666;
+   background-color: var(--yellow-color);
    border: none;
    font-weight: 600;
    margin-left: 80px;

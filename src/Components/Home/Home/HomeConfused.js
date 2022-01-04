@@ -4,7 +4,10 @@ import device from "../../../images/device-1.png";
 const HomeConfused = () => {
   return (
     <>
-      <section className="slice-lg mt-4">
+      <section
+        className="slice-lg mt-4"
+        style={{ fontFamily: "var(--montserrat-font)" }}
+      >
         <div className="container">
           <div className="row align-items-center cols-xs-space cols-sm-space cols-md-space">
             <div className="col-lg-6 order-lg-2 ml-lg-auto">
