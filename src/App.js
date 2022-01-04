@@ -9,6 +9,7 @@ import Rooms from "./Components/Rooms/Rooms";
 import PrivateRoute from "./Components/Login/Login/PrivateRoute/PrivateRoute";
 import Contact from "./Components/Contact/Contact";
 import About from "./Components/About/About";
+import HotelDetail from "./Components/hotelDetail/HotelDetail";
 
 function App() {
   return (
@@ -19,11 +20,16 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/contactus" element={<Contact />} />
-          <Route path="/about" element={<About/>} />
-          <Route path="/rooms" element={<PrivateRoute>
-            <Rooms />
-          </PrivateRoute>}>
-          </Route>
+          <Route path="/about" element={<About />} />
+          <Route
+            path="/rooms"
+            element={
+              <PrivateRoute>
+                <Rooms />
+              </PrivateRoute>
+            }
+          ></Route>
+          <Route path="/hotel/:id" element={<HotelDetail />} />
           <Route path="/register" element={<Register />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
