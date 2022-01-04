@@ -7,6 +7,7 @@ import Hotels from "../hotels/Hotels";
 import HomeAboutSection from "./HomeAboutSection";
 import HomeConfused from "./HomeConfused";
 import TopNotch from "./TopNotch";
+import Footer from "../../Shared/Footer/Footer";
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
       <div className="dual-tone">
         <KnowMore />
       </div>
+      <Footer />
     </div>
   );
 };
