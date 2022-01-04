@@ -31,7 +31,7 @@ const Login = () => {
       <Container className="p-5">
         <Row>
           <Col lg={2}></Col>
-          <Col lg={8} sm={12} className="register-container">
+          <Col lg={8} sm={12} xs={12} className="register-container">
             <div
               className="login-form"
               style={{ fontFamily: "var(--poppins-font)" }}
@@ -58,10 +58,10 @@ const Login = () => {
                 </Form.Group>
                 <NavLink style={{ textDecoration: "none" }} to="/register">
                   <span className="link-text">New User? please Register</span>
-                </NavLink>
+                </NavLink> <br />
                 <button className="lonin-btn" type="submit">
                   LogIn
-                </button>{" "}
+                </button>
                 <br />
               </Form>
               <div className="wrapper">

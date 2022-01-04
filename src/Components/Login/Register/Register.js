@@ -29,7 +29,7 @@ const Register = () => {
         <Container className="p-5">
           <Row>
             <Col lg={2}></Col>
-            <Col lg={8} sm={12} className="register-container">
+            <Col lg={8} sm={12} xs={12} className="register-container">
               <div className="register-form">
                 <h2 className="register-text">Please Register</h2>
                 {!isLoading && (
@@ -70,10 +70,10 @@ const Register = () => {
                         <span className="link-text">
                           Already Registered? please LogIn
                         </span>
-                      </NavLink>
+                      </NavLink> <br />
                       <button className="lonin-btn" type="submit">
                         Register
-                      </button>{" "}
+                      </button>
                       <br />
                     </Form>
                   </>
