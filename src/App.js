@@ -19,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/hotel/:id" element={<HotelDetail />} />
           <Route path="/contactus" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route
@@ -29,7 +30,6 @@ function App() {
               </PrivateRoute>
             }
           ></Route>
-          <Route path="/hotel/:id" element={<HotelDetail />} />
           <Route path="/register" element={<Register />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
