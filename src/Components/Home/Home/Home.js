@@ -9,7 +9,6 @@ import HomeConfused from "./HomeConfused";
 import TopNotch from "./TopNotch";
 import Footer from "../../Shared/Footer/Footer";
 import CaptionCard from "../Caption/CaptionCard";
-import Partners from "../Partnership/Partners";
 
 const Home = () => {
   return (
