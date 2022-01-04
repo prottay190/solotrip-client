@@ -6,7 +6,7 @@ import "./CationCard.css";
 const CaptionCard = () => {
   return (
     <>
-      <h1 className="text-center cap mb-1">Our Partners</h1>
+      <h1 className="text-center cap mb-1">Our Partners </h1>
       <Container className="mt-3">
         <Row xs={1} md={2} lg={12} className="g-4">
           <Col className="pb-5">
