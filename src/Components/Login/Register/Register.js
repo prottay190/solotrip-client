@@ -80,7 +80,7 @@ const Register = () => {
               {isLoading && <Spinner animation="border" variant="info" />}
               {user?.email && (
                 <Alert style={{ marginTop: "10px" }} variant="success">
-                  successfuly Registger!
+                  successfuly Registger!!
                 </Alert>
               )}
               {authError && <Alert variant="danger">{authError}</Alert>}
