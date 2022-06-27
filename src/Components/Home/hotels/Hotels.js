@@ -15,11 +15,13 @@ const Hotels = () => {
         <h2>OUR FAVORITE HOTELS</h2>
         <p>Checkout now to get discounts</p>
       </div>
-      <Row xs={1} md={3} className="hotel-cards">
+     <div>
+     <Row xs={1} md={2} className="g-5 hotel-cards">
         {hotels.map((hotel) => (
           <HotelCard key={hotel._id} hotel={hotel} />
         ))}
       </Row>
+     </div>
     </Container>
   );
 };
